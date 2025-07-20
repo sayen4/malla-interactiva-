@@ -23,7 +23,6 @@ const estado = {};
 ramos.forEach(r => estado[r.id] = false);
 
 const contenedor = document.getElementById('malla');
-div.title = desbloqueado ? 'Puedes aprobar este ramo' : 'Debes aprobar prerrequisitos';
 
 function renderMalla() {
   contenedor.innerHTML = '';
@@ -34,6 +33,7 @@ function renderMalla() {
     if (!desbloqueado && !estado[ramo.id]) div.classList.add('bloqueado');
     if (estado[ramo.id]) div.classList.add('aprobado');
     div.textContent = ramo.nombre;
+    div.title = desbloqueado ? 'Puedes aprobar este ramo' : 'Debes aprobar prerrequisitos';
     div.onclick = () => {
       if (!desbloqueado && !estado[ramo.id]) return;
       estado[ramo.id] = !estado[ramo.id];
