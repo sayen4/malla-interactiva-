@@ -23,6 +23,7 @@ const estado = {};
 ramos.forEach(r => estado[r.id] = false);
 
 const contenedor = document.getElementById('malla');
+div.title = desbloqueado ? 'Puedes aprobar este ramo' : 'Debes aprobar prerrequisitos';
 
 function renderMalla() {
   contenedor.innerHTML = '';
